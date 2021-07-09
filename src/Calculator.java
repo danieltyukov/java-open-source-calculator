@@ -66,6 +66,24 @@ public class Calculator implements ActionListener {
     panel.setBounds(50, 100, 300, 300);
     panel.setLayout(new GridLayout(4, 4, 10, 10));
 
+    panel.add(numberButton[1]);
+    panel.add(numberButton[2]);
+    panel.add(numberButton[3]);
+    panel.add(addButton);
+    panel.add(numberButton[4]);
+    panel.add(numberButton[5]);
+    panel.add(numberButton[6]);
+    panel.add(subButton);
+    panel.add(numberButton[7]);
+    panel.add(numberButton[8]);
+    panel.add(numberButton[9]);
+    panel.add(mulButton);
+    panel.add(decButton);
+    panel.add(numberButton[0]);
+    panel.add(equButton);
+    panel.add(divButton);
+
+    frame.add(panel);
     frame.add(delButton);
     frame.add(clrButton);
     frame.add(textfield);
@@ -77,5 +95,11 @@ public class Calculator implements ActionListener {
   }
 
   @Override
-  public void actionPerformed(ActionEvent e) {}
+  public void actionPerformed(ActionEvent e) {
+    for (int i = 0; i < 10; i++) {
+      if (e.getSource() == numberButton[i]) {
+        textfield.setText(textfield.getText().concat(String.valueOf(i)));
+      }
+    }
+  }
 }
